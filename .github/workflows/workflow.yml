@@ -1,0 +1,9 @@
+name: workflow.yml
+on: [push]
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello GitHub
+        run: echo  "Hello GitHub Actions!"
+
