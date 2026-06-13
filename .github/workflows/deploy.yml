@@ -10,16 +10,17 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Execute remote SSH commands using password
+      - name: Execute remote SSH commands
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
+          script_stop: true
           script: |
-            cd /home/training-fast-api
-            ls 
-            pm2 stop training-fast-api
-            git pull 
+            cd /home/training-fast-api && \
+            ls && \
+            pm2 stop training-fast-api && \
+            git pull && \
             pm2 start training-fast-api
