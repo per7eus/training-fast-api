@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/training-fast-api \
+            cd "/home/training-fast-api" \
             ls \
             pm2 stop training-fast-api \ 
             git pull \
