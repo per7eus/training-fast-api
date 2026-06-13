@@ -1,5 +1,9 @@
 name: Remote SSH Command
-on: [push]
+on:
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build:
     name: Build
@@ -12,4 +16,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: /
+            cd /home/training-fast-api
+            pm2 stop training-fast-api
+            git pull 
+            pm2 start training-fast-api
