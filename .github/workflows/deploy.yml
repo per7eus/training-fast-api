@@ -1,6 +1,6 @@
 name: Remote SSH Command
 on:
-  merge_group:
+  push:
     branches:
       - main
 
