@@ -19,6 +19,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: /
             cd /home/training-fast-api
-            pm2 stop training-fast-api
-            git pull 
-            pm2 start training-fast-api
+            ls
+#            pm2 stop training-fast-api
+#            git pull
+#            pm2 start training-fast-api
